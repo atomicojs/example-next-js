@@ -1,3 +1,14 @@
+## How is it possible that Atomico supports Next.js SSR?
+
+[![twitter](https://raw.githubusercontent.com/atomicojs/docs/master/.gitbook/assets/twitter.svg)](https://twitter.com/atomicojs)
+[![discord](https://raw.githubusercontent.com/atomicojs/docs/master/.gitbook/assets/discord.svg)](https://discord.gg/7z3rNhmkNE)
+[![documentation](https://raw.githubusercontent.com/atomicojs/docs/master/.gitbook/assets/doc-1.svg)](https://atomico.gitbook.io/doc/)
+[![discord](https://raw.githubusercontent.com/atomicojs/docs/master/.gitbook/assets/doc.svg)](https://webcomponents.dev/create/atomico)
+
+Atomico uses webcomponents, but it is agnostic to the rendering system, thanks to the [@atomico/react](https://github.com/atomicojs/react) package, atomico is able to extend its use support to any platform that works with React, example Next.js.
+
+> This example is introductory, to exemplify the use of @atomico/react manually, there is a second package @atomico/exprots that does all this automatically by distributing your component created with Atomico as a package 😉.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

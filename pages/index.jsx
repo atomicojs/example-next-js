@@ -6,6 +6,8 @@ import {
   SiteText,
   SiteLink,
   SiteHeader,
+  SiteEye,
+  SiteMenu,
 } from "@atomico/site";
 import Image from "next/image";
 
@@ -14,6 +16,8 @@ const ReactSiteGrid = auto(SiteGrid);
 const ReactSiteText = auto(SiteText);
 const ReactSiteLink = auto(SiteLink);
 const ReactSiteHeader = auto(SiteHeader);
+const ReactSiteEye = auto(SiteEye);
+const ReactSiteMenu = auto(SiteMenu);
 
 export default function Home() {
   return (
@@ -22,30 +26,40 @@ export default function Home() {
         <div slot="logo">
           <Image src="/logo.svg" alt="logo" width="180" height="40" />
         </div>
-        {menuHeader.map((data) => (
-          <ReactSiteLink href={data.href} slot="link" target="_blank">
+        {menuHeader.map((data, id) => (
+          <ReactSiteLink
+            key={id + ""}
+            href={data.href}
+            slot="link"
+            target="_blank"
+          >
             {data.title}
           </ReactSiteLink>
         ))}
-        <site-menu slot="action">
-          <site-eye class="eye"></site-eye>
-          <div class="menu">
-            <div class="menu-group">
-              {menuModal.map((data) => (
-                <div>
-                  <site-text elegant>{data.title}</site-text>
-                  <div class="menu-items">
-                    {data.items.map((data) => (
-                      <site-link href={data.href} slot="link" target="_blank">
+        <ReactSiteMenu slot="action">
+          <ReactSiteEye className="eye"></ReactSiteEye>
+          <div className="menu">
+            <div className="menu-group">
+              {menuModal.map((data, id) => (
+                <div key={id + ""}>
+                  <ReactSiteText elegant>{data.title}</ReactSiteText>
+                  <div className="menu-items">
+                    {data.items.map((data, id) => (
+                      <ReactSiteLink
+                        key={id + ""}
+                        href={data.href}
+                        slot="link"
+                        target="_blank"
+                      >
                         {data.title}
-                      </site-link>
+                      </ReactSiteLink>
                     ))}
                   </div>
                 </div>
               ))}
             </div>
           </div>
-        </site-menu>
+        </ReactSiteMenu>
       </ReactSiteHeader>
       <ReactSiteIsotype>
         <ReactSiteGrid gap={3} centered>
