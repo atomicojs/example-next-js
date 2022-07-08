@@ -11,6 +11,23 @@ Atomico uses webcomponents, but it is agnostic to the rendering system, thanks t
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## what is different about Next.js to support Atomico webcomponents with SSR?
+
+**1. [pages/\_app.jsx](./pages/_app.jsx)**
+
+```jsx
+import "@atomico/react/proxy";
+import "../styles/globals.css";
+
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />;
+}
+
+export default MyApp;
+```
+
+**2. [pages/index.jsx](./pages/index.jsx)**: here the magic happens.
+
 ## Getting Started
 
 First, run the development server:
